@@ -1008,8 +1008,10 @@ section {
               </select>
             </div>
 
-            <!-- === CÓDIGO SOLO PARA ABRIR EL PDF DE HÁBEAS DATA === -->
+            <!-- === DOCUMENTOS LEGALES: HÁBEAS DATA + AVISO DE PRIVACIDAD === -->
             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+              
+              <!-- ---- POLÍTICA DE TRATAMIENTO (con código) ---- -->
               <label style="font-weight: 600;">
                 Para consultar la <u>Política de Tratamiento de Datos Personales</u>,
                 ingrese el código de verificación:
@@ -1039,19 +1041,41 @@ section {
               <small id="msgCodigoEtica" style="color:#cc0000; display:none;">
                 Código incorrecto. Intente nuevamente.
               </small>
-            </div>
 
-            <!-- === CHECK HÁBEAS DATA (OBLIGATORIO) === -->
-            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-              <div class="form-check">
+              <!-- ---- CHECK HÁBEAS DATA ---- -->
+              <div class="form-check mt-2 mb-3">
                 <input
                   type="checkbox"
                   class="form-check-input"
-                  id="habeasCheckEtica"
+                  id="checkHabeasEtica"
                   required
                 >
-                <label class="form-check-label small" for="habeasCheckEtica">
-                  Confirmo haber leído la Política de Tratamiento de Datos Personales.
+                <label class="form-check-label" for="checkHabeasEtica">
+                  Confirmo haber leído y aceptado la Política de Tratamiento de Datos Personales.
+                </label>
+              </div>
+
+              <hr>
+
+              <!-- ---- AVISO DE PRIVACIDAD (descarga libre) ---- -->
+              <button
+                type="button"
+                class="btn btn-secondary mt-2"
+                onclick="window.open('docs/001 AVISO DE PRIVACIDAD.pdf', '_blank');"
+              >
+                Ver Aviso de Privacidad
+              </button>
+
+              <!-- ---- CHECK AVISO DE PRIVACIDAD ---- -->
+              <div class="form-check mt-2">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="checkPrivacidadEtica"
+                  required
+                >
+                <label class="form-check-label" for="checkPrivacidadEtica">
+                  Acepto el Aviso de Privacidad.
                 </label>
               </div>
             </div>
@@ -1235,8 +1259,10 @@ section {
               ></textarea>
             </div>
 
-            <!-- === CÓDIGO SOLO PARA ABRIR PDF DE HÁBEAS DATA === -->
+            <!-- === DOCUMENTOS LEGALES: HÁBEAS DATA + AVISO DE PRIVACIDAD === -->
             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+
+              <!-- ---- POLÍTICA DE TRATAMIENTO (con código) ---- -->
               <label style="color: white; font-weight: 600;">
                 Para consultar la <u>Política de Tratamiento de Datos Personales</u>,
                 ingrese el código de verificación:
@@ -1266,26 +1292,44 @@ section {
               <small id="msgCodigoContacto" style="color:#ffbbbb; display:none;">
                 Código incorrecto, inténtelo nuevamente.
               </small>
-            </div>
 
-            <!-- === CHECK HÁBEAS DATA (OBLIGATORIO) === -->
-            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-              <div class="form-check">
+              <!-- ---- CHECK HÁBEAS DATA ---- -->
+              <div class="form-check mt-2 mb-3">
                 <input
                   type="checkbox"
                   class="form-check-input"
-                  id="habeasCheckContacto"
+                  id="checkHabeasContacto"
                   required
                 >
-                <label
-                  class="form-check-label small"
-                  for="habeasCheckContacto"
-                  style="color: white;"
-                >
-                  Confirmo haber leído la Política de Tratamiento de Datos Personales.
+                <label class="form-check-label" for="checkHabeasContacto" style="color: white;">
+                  Confirmo haber leído y aceptado la Política de Tratamiento de Datos Personales.
                 </label>
               </div>
-            </div>
+
+              <hr>
+
+              <!-- ---- AVISO DE PRIVACIDAD (descarga libre) ---- -->
+              <button
+                type="button"
+                class="btn btn-secondary mt-2"
+                onclick="window.open('docs/001 AVISO DE PRIVACIDAD.pdf', '_blank');"
+              >
+                Ver Aviso de Privacidad
+              </button>
+
+              <!-- ---- CHECK AVISO DE PRIVACIDAD ---- -->
+              <div class="form-check mt-2">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="checkPrivacidadContacto"
+                  required
+                >
+                <label class="form-check-label" for="checkPrivacidadContacto" style="color: white;">
+                  Acepto el Aviso de Privacidad.
+                </label>
+              </div>
+</div>
 
             <div class="col-auto m-auto">
               <!-- Botón original de Mobirise, sin cambios -->
