@@ -595,6 +595,32 @@ section {
   }
 }
 
+/* ===== FORZAR DROPDOWN EN ROJO (DESKTOP + MOBILE) ===== */
+.dropdown-menu.dropdown-menu-fix{
+  background: linear-gradient(135deg, var(--accent-color), #b5050f) !important;
+  border: none !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.25) !important;
+}
+
+/* Links siempre blancos en el dropdown */
+.dropdown-menu.dropdown-menu-fix .dropdown-item{
+  color: #ffffff !important;
+}
+
+/* Hover / focus en rojo más oscuro */
+.dropdown-menu.dropdown-menu-fix .dropdown-item:hover,
+.dropdown-menu.dropdown-menu-fix .dropdown-item:focus{
+  background: rgba(0,0,0,0.14) !important;
+  color: #ffffff !important;
+}
+
+/* Evitar que Bootstrap/Mobirise cambie el fondo en móvil al abrirse */
+@media (max-width: 991.98px){
+  .navbar .dropdown-menu.dropdown-menu-fix{
+    background: linear-gradient(135deg, var(--accent-color), #b5050f) !important;
+  }
+}
+
 </style>
 </head>
 
