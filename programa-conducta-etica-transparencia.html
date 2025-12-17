@@ -957,39 +957,78 @@
   </section> -->
 
     <!-- =================== DESCARGA DOCUMENTO (SIN CÓDIGO) =================== -->
-  <section class="content07 photom4_content07" id="descarga-documento">
-    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(255, 255, 255);"></div>
+<!-- =================== DESCARGA DOCUMENTO (CON CÓDIGO) =================== -->
+<section class="content07 photom4_content07" id="descarga-documento">
+  <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(255, 255, 255);"></div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 m-auto">
-          <div class="download-card">
-            <h3 class="mbr-section-title mbr-bold mbr-fonts-style display-5" style="margin-bottom:.25rem;">
-              Para más información y para descargar el documento completo del Programa de Ética y Transparencia
-            </h3>
-            <p class="mbr-text mbr-fonts-style display-7">
-              <strong>Código de Ética, Conducta y Buen Gobierno, SARLAFT y PTEE</strong>, use el siguiente botón:
-            </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 m-auto">
+        <div class="download-card">
 
-            <!-- Nota: ajuste la ruta según donde publiques el PDF (ej: docs/, assets/docs/, etc.) -->
-            <a
-              class="btn btn-black display-7"
-              href="docs/002 CODIGO DE ETICA, CONDUCTA Y BUEN GOBIERNO, SARLAFT Y PTEE.pdf"
-              target="_blank"
-              rel="noopener"
-              download
+          <h3 class="mbr-section-title mbr-bold mbr-fonts-style display-5" style="margin-bottom:.25rem;">
+            Para más información y para descargar el documento completo del Programa de Ética y Transparencia
+          </h3>
+
+          <p class="mbr-text mbr-fonts-style display-7">
+            <strong>Código de Ética, Conducta y Buen Gobierno, SARLAFT y PTEE</strong>
+          </p>
+
+          <!-- ===== BLOQUE DE CÓDIGO ===== -->
+          <div style="max-width:420px; margin-top:1rem;">
+
+            <label style="font-weight:600;">
+              Para descargar el documento, ingrese el código de verificación:
+            </label>
+
+            <div class="input-group mb-2">
+              <input
+                type="password"
+                id="codigoDescargaEtica"
+                class="form-control"
+                placeholder="Ingrese el código"
+              >
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="btnValidarCodigoDescarga"
+              >
+                Validar
+              </button>
+            </div>
+
+            <small
+              id="msgCodigoDescarga"
+              style="color:#cc0000; display:none;"
             >
-              Ver / Descargar PDF
-            </a>
+              Código incorrecto. Intente nuevamente.
+            </small>
 
-            <p class="mbr-text mbr-fonts-style display-7" style="margin-top:1rem; margin-bottom:0; opacity:.8;">
-              Si el navegador no descarga automáticamente, se abrirá el documento en una nueva pestaña.
-            </p>
           </div>
+
+          <!-- ===== BOTÓN DE DESCARGA (OCULTO HASTA VALIDAR) ===== -->
+          <a
+            id="btnDescargarDocumento"
+            class="btn btn-black display-7"
+            href="docs/002 CODIGO DE ETICA, CONDUCTA Y BUEN GOBIERNO, SARLAFT Y PTEE.pdf"
+            target="_blank"
+            rel="noopener"
+            download
+            style="display:none; margin-top:1rem;"
+          >
+            Ver / Descargar PDF
+          </a>
+
+          <p class="mbr-text mbr-fonts-style display-7"
+             style="margin-top:1rem; margin-bottom:0; opacity:.8;">
+            Si el navegador no descarga automáticamente, el documento se abrirá en una nueva pestaña.
+          </p>
+
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- =================== 9. CONTROL DE CAMBIOS (ACTUALIZADO CON NUEVA VERSIÓN) =================== -->
   <section class="table01 photom4_table01 section-table cid-txJTmVQjlw" id="table01-2h">
@@ -1212,5 +1251,36 @@ Sitracarga SAS"
       });
     })();
   </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const CODIGO_CORRECTO = "2580"; // MISMO código que en Habeas Data
+
+  const input  = document.getElementById('codigoDescargaEtica');
+  const btnVal = document.getElementById('btnValidarCodigoDescarga');
+  const msg    = document.getElementById('msgCodigoDescarga');
+  const btnPdf = document.getElementById('btnDescargarDocumento');
+
+  if (!input || !btnVal || !msg || !btnPdf) return;
+
+  btnVal.addEventListener('click', function () {
+    if (input.value.trim() === CODIGO_CORRECTO) {
+      msg.style.display = 'none';
+      btnPdf.style.display = 'inline-block';
+      btnVal.classList.remove('btn-primary');
+      btnVal.classList.add('btn-success');
+      btnVal.innerText = 'Código válido';
+    } else {
+      msg.style.display = 'block';
+      btnPdf.style.display = 'none';
+      btnVal.classList.remove('btn-success');
+      btnVal.classList.add('btn-primary');
+      btnVal.innerText = 'Validar';
+    }
+  });
+
+});
+</script>
 </body>
 </html>
