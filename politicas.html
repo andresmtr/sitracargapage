@@ -545,6 +545,56 @@ section {
 }
 
 
+/* ===== DROPDOWN NOSOTROS - CENTRADO REAL ===== */
+.dropdown-menu-fix {
+  min-width: 300px;
+  max-width: 460px;
+  width: max-content;
+  padding: 14px 10px;
+  
+  text-align: center;              /* CENTRA TODO */
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+
+/* Ítems del menú */
+.dropdown-menu-fix .dropdown-item {
+  white-space: normal;             /* permite saltos */
+  word-break: normal !important;   /* NO romper letras */
+  overflow-wrap: break-word;       /* rompe solo si es necesario */
+  
+  text-align: center;              /* centra cada ítem */
+  line-height: 1.35;
+  padding: 10px 14px;
+
+  display: block;
+}
+
+/* Ícono + texto centrados */
+.dropdown-menu-fix .dropdown-item .mbr-iconfont {
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Hover suave */
+.dropdown-menu-fix .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 991.98px) {
+  .dropdown-menu-fix {
+    width: calc(100vw - 24px) !important;
+    max-width: 460px;
+    min-width: unset;
+  }
+
+  .dropdown-menu-fix .dropdown-item {
+    padding: 12px 12px;
+  }
+}
+
 </style>
 </head>
 
@@ -591,13 +641,13 @@ section {
 
         <div class="menu-logo">
           <div class="navbar-brand">
-            <span class="navbar-logo">
+            <a href="index.html" class="navbar-logo">
               <img
                 src="assets/images/sitracarga-logo-b.png"
                 alt="Sitracarga - Grupocarga"
                 style="height: 5.6rem;"
               >
-            </span>
+            </a>
           </div>
         </div>
 
@@ -622,38 +672,33 @@ section {
               >
                 NOSOTROS
               </a>
-              <div class="dropdown-menu">
-                <a class="text-white dropdown-item text-primary display-4" href="nosotros.html#sitracarga-historia">
-                  Nuestra historia
-                </a>
-                <a class="text-white dropdown-item text-primary display-4" href="politicas.html">
-                  Políticas
-                </a>
-                <a class="text-white dropdown-item text-primary display-4" href="programa-conducta-etica-transparencia.html">
-                  Código de ética, conducta y buen gobierno, SARLAFT y PTEE
-                </a>
-                <a class="text-white dropdown-item text-primary display-4" href="index.html#sitracarga-linea-etica">
-                  Línea Ética
-                </a>
-                <a class="text-white dropdown-item text-primary display-4" href="index.html#sitracarga-dir-oficinas">
-                  Directorio de oficinas
-                </a>
-                <!-- <a
-                  class="text-white dropdown-item text-primary display-4"
-                  href="https://grupocarga.com.co/docs/BROCHURE%20SITRACARGA%202022.pdf"
-                  target="_blank"
-                >
-                  Descargar Brochure
-                </a> -->
-                <a
-                  class="text-white dropdown-item text-primary display-4"
-                  href="index.html#sitracarga-contactenos"
-                  target="_blank"
-                >
-                  <span class="icon54-v1-compose-mail2 mbr-iconfont mbr-iconfont-btn"></span>
-                  Contáctenos
-                </a>
-              </div>
+            <div class="dropdown-menu dropdown-menu-fix">
+              <a class="text-white dropdown-item text-primary display-4" href="nosotros.html#sitracarga-historia">
+                Nuestra historia
+              </a>
+
+              <a class="text-white dropdown-item text-primary display-4" href="politicas.html">
+                Políticas
+              </a>
+
+              <a class="text-white dropdown-item text-primary display-4" href="programa-conducta-etica-transparencia.html">
+                Código de ética, conducta y buen gobierno, SARLAFT y PTEE
+              </a>
+
+              <a class="text-white dropdown-item text-primary display-4" href="index.html#sitracarga-linea-etica">
+                Línea Ética
+              </a>
+
+              <a class="text-white dropdown-item text-primary display-4" href="index.html#sitracarga-dir-oficinas">
+                Directorio de oficinas
+              </a>
+
+              <a class="text-white dropdown-item text-primary display-4" href="index.html#sitracarga-contactenos" target="_blank">
+                <span class="icon54-v1-compose-mail2 mbr-iconfont mbr-iconfont-btn"></span>
+                Contáctenos
+              </a>
+            </div>
+
             </li>
           </ul>
 
